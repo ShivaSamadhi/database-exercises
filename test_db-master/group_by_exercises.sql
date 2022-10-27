@@ -18,7 +18,8 @@ Where last_name Like '%Q%'
 Group By last_name
 Order By last_name;
 
-Select gender, count(*) From employees
+Select gender, count(*)
+From employees
 Where first_name = 'Irena'
    Or first_name = 'Vidya'
    Or first_name = 'Maya'
