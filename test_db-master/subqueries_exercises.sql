@@ -29,3 +29,16 @@ Where gender In (
     From employees
     Where gender = 'F' And to_date = '9999-01-01'
 );
+
+Select dept_name
+From departments
+         Join dept_manager
+              On departments.dept_no = dept_manager.dept_no
+         Join employees
+              On dept_manager.emp_no = employees.emp_no
+Where gender In (
+    Select gender
+    From employees
+    Where gender = 'F' And to_date = '9999-01-01'
+)
+Order By dept_name;
